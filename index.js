@@ -44,6 +44,42 @@ app.post('/write', function(req, res) {
   res.sendFile(__dirname + "/write-complete.html");
 });
 
+app.get('/loginPost', function(req, res) {
+  res.sendFile(__dirname + "/loginPost.html");
+});
+
+app.post('/loginPost', function(req, res) {
+  let password = req.body['password'];
+  if (password == 'password') {
+    console.log('something');
+	  res.sendFile(__dirname + "/write.html");
+  }
+});
+
+app.get('/loginDelete', function(req, res) {
+  res.sendFile(__dirname + "/loginDelete.html");
+});
+
+app.post('/loginDelete', function(req, res) {
+  let password = req.body['password'];
+  if (password == 'password') {
+    console.log('something');
+	  res.sendFile(__dirname + "/delete.html");
+  }
+});
+
+
+app.get('/loginEdit', function(req, res) {
+  res.sendFile(__dirname + "/loginEdit.html");
+});
+
+app.post('/loginEdit', function(req, res) {
+  let password = req.body['password'];
+  if (password == 'password') {
+    console.log('something');
+	  res.sendFile(__dirname + "/edit2.html");
+  }
+});
 
 
 app.get('/delete', function(req, res) {

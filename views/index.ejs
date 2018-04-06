@@ -1,0 +1,29 @@
+<link id="pagestyle" rel="stylesheet" type="text/css" href="encription.css">
+<body>
+	<img src="banner.png" class="center"/>
+<div>
+		<div id="NotBody">
+			<div id="notBody">
+<% for(var i=0; i<posts.length; i++) {%>
+
+<h3><%= posts[i].timestamp%></h3>
+<div class = "posts">
+<h2 class = "center" id = "title"><%= posts[i].title%></h2>
+<p class = "center"><%= posts[i].content%></p>
+</div>
+<% } %>
+
+	</div>
+	</body>
+	<div id="dropdown">
+					<div id="logo"><img src="logo.png"/></div>
+
+					<div id="hiddenMenu">
+						<ul>
+							<li id="write"><h3><a href="/write">Write</a></h3> </li>
+							<li id="delete"><h3><a href="/delete">Delete</a></h3> </li>
+							<li id="edit2"><h3><a href="/edit2">Edit</a></h3> </li>
+						</ul>
+					</div>
+				</div>
+</html> 

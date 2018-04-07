@@ -77,7 +77,7 @@ app.post('/loginEdit', function(req, res) {
   let password = req.body['password'];
   if (password == 'password') {
     console.log('something');
-	  res.sendFile(__dirname + "/edit2.html");
+	  res.sendFile(__dirname + "/edit.html");
   }
 });
 
@@ -98,9 +98,26 @@ app.post('/delete', function(req,res){
 
 
 
-app.get('/edit2', function(req, res) {
-  res.sendFile(__dirname + "/edit2.html");
+app.get('/edit', function(req, res) {
+  res.sendFile(__dirname + "/edit.html");
 });
+
+app.post('/edit', function(req,res){
+	 let title = req.body['title']
+	 blogRealm.write(() => {
+	let toEdit =  blogRealm.create('Post', {title: title}, true);	
+	res.render('edit2.ejs', {toEdit: toEdit});
+	 });
+
+});
+
+app.get('/edit2', function(req, res) {
+	blogRealm.write(() => {
+	let toEdit =  blogRealm.create('Post', {title: title}, true);	
+	res.render('edit2.ejs', {toEdit: toEdit});
+	});
+
+})
 
 app.post('/edit2', function(req,res){
 	 let title = req.body['title'],

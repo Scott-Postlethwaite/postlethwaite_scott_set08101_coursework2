@@ -3,7 +3,7 @@
 <form action="/edit2" method="POST">
 <h2 id="Title" class="center">Edit</h2>
 <p class="center">Title:</p>
-<textarea type="text" name="title" rows="1" cols = "30" class="center"></textarea><br />
+<textarea type="text" name="title" rows="1" cols = "30" class="center"><%= toEdit.title%></textarea><br />
 <p class="center">Content:</p>
   <textarea name="content" rows="15" cols="100" class="center"><%= toEdit.content%></textarea><br />
   <button type="submit" class="center">Post</button>
